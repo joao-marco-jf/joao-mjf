@@ -1,3 +1,4 @@
+import Form from "@/components/form";
 import { Bot, DraftingCompass, Globe, Smartphone } from "lucide-react";
 import Link from "next/link";
 
@@ -8,8 +9,8 @@ export default function Home() {
         <h1 className="md:text-center text-6xl md:text-7xl font-extrabold tracking-tighter">Construindo aplicações para aprimorar seus resultados.</h1>
         <p className="md:text-center md:w-2/3 text-lg md:text-xl text-zinc-500">Supere sua concorrência e destaque-se no seu ramo de mercado com aplicações desenvolvidas especificamente para o seu negócio.</p>
         <div className="flex gap-2">
-          <Link href={"#contact"} className="p-[.6rem] px-[2rem] bg-blue-600 shadow text-white text-lg w-fit rounded-md">Enviar mensagem</Link>
-          <button className="p-[.6rem] px-[2rem] border shadow text-lg font-semibold w-fit rounded-md">Ver mais</button>
+          <Link href={"#contact"} className="p-[.6rem] px-[2rem] bg-blue-600 shadow text-white text-lg w-fit rounded-md focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-blue-600">Enviar mensagem</Link>
+          <button className="p-[.6rem] px-[2rem] border shadow text-lg font-semibold w-fit rounded-md focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-blue-600">Ver mais</button>
         </div>
       </section>
       <section id="services" className="columns-1 md:columns-2 space-y-4">
@@ -34,26 +35,9 @@ export default function Home() {
       <section id="contact" className="flex flex-col md:flex-row gap-4">
         <div className="flex flex-col w-full gap-4">
           <h2 className="text-5xl md:text-6xl font-extrabold tracking-tighter">Vamos construir uma aplicação juntos?</h2>
-          <p className="text-xl text-zinc-500">Vamos trabalhar juntos para criar uma aplicação que destacará seu negócio perante ao seus concorrentes. Preencha o furmulário e me envie um e-mail, ou se preferir, entre em contato comigo pelo <Link href={"#"}><span className="text-green-500">Whatsapp</span></Link>.</p>
+          <p className="text-xl text-zinc-500">Vamos trabalhar juntos para criar uma aplicação que destacará seu negócio perante ao seus concorrentes. Preencha o furmulário e me envie um e-mail, ou se preferir, entre em contato comigo pelo Whatsapp.</p>
         </div>
-        <form className="flex w-full flex-col gap-4">
-          <div className="flex flex-col gap-2">
-            <label htmlFor="name">Nome</label>
-            <input className="p-[.6rem] shadow border rounded-md outline-none focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-blue-600" type="text" id="name" aria-label="name" placeholder="John Smith"/>
-          </div>
-
-          <div className="flex flex-col gap-2">
-            <label htmlFor="email">E-mail</label>
-            <input className="p-[.6rem] shadow border rounded-md outline-none focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-blue-600" type="email" id="email" aria-label="email" placeholder="exemplo@email.com"/>
-          </div>
-
-          <div className="flex flex-col gap-2">
-            <label htmlFor="body">Mensagem</label>
-            <textarea className=" h-60 resize-none p-[.6rem] shadow border rounded-md outline-none focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-blue-600" id="body" aria-label="body" placeholder="Conte-me um pouco mais sobre suas ideias e sua empresa aqui"/>
-          </div>
-
-          <input className="p-[.6rem] px-[2rem] bg-blue-600 shadow text-white text-lg rounded-md" type="submit" value="Enviar" />
-        </form>
+        <Form />
       </section>
     </main>
   );
