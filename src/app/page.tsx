@@ -1,113 +1,60 @@
-import Image from "next/image";
+import { Bot, DraftingCompass, Globe, Smartphone } from "lucide-react";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main className="flex flex-col px-4 lg:px-40 2xl:px-80 tracking-tighter gap-48">
+      <section id="hero" className="flex flex-col gap-4 justify-center md:items-center h-screen">
+        <h1 className="md:text-center text-6xl md:text-7xl font-extrabold tracking-tighter">Construindo aplicações para aprimorar seus resultados.</h1>
+        <p className="md:text-center md:w-2/3 text-lg md:text-xl text-zinc-500">Supere sua concorrência e destaque-se no seu ramo de mercado com aplicações desenvolvidas especificamente para o seu negócio.</p>
+        <div className="flex gap-2">
+          <Link href={"#contact"} className="p-[.6rem] px-[2rem] bg-blue-600 shadow text-white text-lg w-fit rounded-md">Enviar mensagem</Link>
+          <button className="p-[.6rem] px-[2rem] border shadow text-lg font-semibold w-fit rounded-md">Ver mais</button>
         </div>
-      </div>
+      </section>
+      <section id="services" className="columns-1 md:columns-2 space-y-4">
+        <h2 className="text-6xl md:text-7xl font-extrabold tracking-tighter">Serviços oferecidos</h2>
+        <div className="flex flex-col gap-2 p-4 border shadow rounded-md">
+          <h3 className="flex gap-2 text-2xl font-bold"><DraftingCompass strokeWidth={2} size={28}/> UX/UI Design</h3>
+          <p className="text-xl text-zinc-500">Serviço voltado para aprimoramento e construção de marca nas redes. Trabalho diretamente com você para criar designs de alta qualidade que cativem seu público-alvo e fortaleçam a presença online da sua empresa.</p>
+        </div>
+        <div className="flex flex-col gap-2 p-4 border shadow rounded-md">
+          <h3 className="flex gap-2 text-2xl font-bold"><Globe strokeWidth={2} size={28}/> Aplicações Web</h3>
+          <p className="text-xl text-zinc-500">Desenvolvimento de aplicações Web para os mais variados contextos de uso. Crio soluções web intuitivas e eficazes, personalizadas para atender às suas necessidades específicas e impulsionar o sucesso do seu negócio.</p>
+        </div>
+        <div className="flex flex-col gap-2 p-4 border shadow rounded-md">
+          <h3 className="flex gap-2 text-2xl font-bold"><Bot strokeWidth={2} size={28}/> Automações</h3>
+          <p className="text-xl text-zinc-500">Automações para processos internos do seu negócio. Desenvolvo sistemas automatizados que simplificam tarefas complexas, permitindo que você e sua equipe se concentrem no que é mais importante para o crescimento da empresa.</p>
+        </div>
+        <div className="flex flex-col gap-2 p-4 border shadow rounded-md">
+          <h3 className="flex gap-2 text-2xl font-bold"><Smartphone strokeWidth={2} size={28}/> Aplicações mobile</h3>
+          <p className="text-xl text-zinc-500">Aplicações mobile para os mais variádos cenários do seu negócio. Crio aplicativos móveis sob medida que oferecem uma experiência excepcional aos usuários, ajudando a impulsionar o engajamento e a fidelidade dos clientes.</p>
+        </div>
+      </section>
+      <section id="contact" className="flex flex-col md:flex-row gap-4">
+        <div className="flex flex-col w-full gap-4">
+          <h2 className="text-5xl md:text-6xl font-extrabold tracking-tighter">Vamos construir uma aplicação juntos?</h2>
+          <p className="text-xl text-zinc-500">Vamos trabalhar juntos para criar uma aplicação que destacará seu negócio perante ao seus concorrentes. Preencha o furmulário e me envie um e-mail, ou se preferir, entre em contato comigo pelo <Link href={"#"}><span className="text-green-500">Whatsapp</span></Link>.</p>
+        </div>
+        <form className="flex w-full flex-col gap-4">
+          <div className="flex flex-col gap-2">
+            <label htmlFor="name">Nome</label>
+            <input className="p-[.6rem] shadow border rounded-md outline-none focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-blue-600" type="text" id="name" aria-label="name" placeholder="John Smith"/>
+          </div>
 
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+          <div className="flex flex-col gap-2">
+            <label htmlFor="email">E-mail</label>
+            <input className="p-[.6rem] shadow border rounded-md outline-none focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-blue-600" type="email" id="email" aria-label="email" placeholder="exemplo@email.com"/>
+          </div>
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+          <div className="flex flex-col gap-2">
+            <label htmlFor="body">Mensagem</label>
+            <textarea className=" h-60 resize-none p-[.6rem] shadow border rounded-md outline-none focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-blue-600" id="body" aria-label="body" placeholder="Conte-me um pouco mais sobre suas ideias e sua empresa aqui"/>
+          </div>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+          <input className="p-[.6rem] px-[2rem] bg-blue-600 shadow text-white text-lg rounded-md" type="submit" value="Enviar" />
+        </form>
+      </section>
     </main>
   );
 }
